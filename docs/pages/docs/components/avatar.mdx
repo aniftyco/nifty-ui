@@ -8,11 +8,11 @@ An image element with a fallback for representing the user.
 
 ---
 
-import { Avatar } from 'nifty-ui';
+import { Avatar, AvatarImage, AvatarFallback } from 'nifty-ui';
 
 <div className="flex gap-5">
-  <Avatar size="sm" src="https://github.com/joshmanders.png" name="Josh Manders" />
-  <Avatar size="md" hash="683b295c5aa896e68c4ea23c8668113e" name="Josh Manders" />
-  <Avatar size="lg" email="josh@joshmanders.com" name="Josh Manders" />
-  <Avatar size="xl" name="Josh Manders" />
+  <Avatar>
+    <AvatarImage src="https://github.com/usefulbroom.png" alt="@usefulbroom" />
+    <AvatarFallback>DS</AvatarFallback>
+  </Avatar>
 </div>

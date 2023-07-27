@@ -1,0 +1,20 @@
+---
+title: Radio Group
+---
+
+# Radio Group
+
+A bunch of Radios, all tuned to a different station.
+
+---
+
+import { Label, RadioGroup, RadioGroupItem } from 'nifty-ui';
+
+<div>
+  <RadioGroup defaultValue="comfortable">
+    <div className="flex items-center space-x-2">
+      <RadioGroupItem value="default" id="r1" />
+      <Label htmlFor="r1">Default</Label>
+    </div>
+  </RadioGroup>
+</div>

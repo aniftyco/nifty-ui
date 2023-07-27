@@ -1,0 +1,37 @@
+---
+title: Sheet
+---
+
+# Sheet
+
+Extention of a dialog popover that comes from the side pannel.
+
+---
+
+import {
+  Button,
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from 'nifty-ui';
+
+<div>
+  <Sheet>
+    <SheetTrigger asChild={true}>
+      <Button>Open</Button>
+    </SheetTrigger>
+    <SheetContent>
+      <SheetHeader>
+        <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+        <SheetDescription>
+          This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+        </SheetDescription>
+      </SheetHeader>
+    </SheetContent>
+  </Sheet>
+</div>

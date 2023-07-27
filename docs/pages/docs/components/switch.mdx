@@ -9,9 +9,9 @@ Yep its a switch.
 ---
 
 import { Switch } from 'nifty-ui';
+import { Label } from 'nifty-ui';
 
-<div className="flex gap-5">
-  <Switch size="sm" label="Test Component 1" />
-  <Switch size="md" label="Test Subject 2" />
-  <Switch size="lg" label="Test Number 3" />
+<div className="flex items-center space-x-2">
+  <Switch id="airplane-mode" />
+  <Label htmlFor="airplane-mode">Airplane Mode</Label>
 </div>

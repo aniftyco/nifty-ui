@@ -1,0 +1,30 @@
+---
+title: Accordion
+---
+
+# Accordion
+
+A stacked set of headings with hidden content
+
+---
+
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'nifty-ui';
+
+<div>
+  <Accordion type="single" collapsible className="w-full">
+    <AccordionItem value="item-1">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>You betcha! its super accessible!</AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>Is it styled?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It comes with default styles BUT feel free to make any changes to fit your project!
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-3">
+      <AccordionTrigger>Is it animated?</AccordionTrigger>
+      <AccordionContent>Yes, but it doesn&apos;t have to be!.</AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</div>

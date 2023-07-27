@@ -1,0 +1,23 @@
+---
+title: Calendar
+---
+
+# Calendar
+
+Calender using date fields allowing you to select dates.
+
+---
+
+import React, {useState} from 'react';
+
+import { Calendar } from 'nifty-ui';
+
+export const CalendarDemo = () => {
+  const [date, setDate] = useState(new Date());
+
+return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />;
+}
+
+<div>
+  <CalendarDemo />
+</div>

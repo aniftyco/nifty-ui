@@ -10,9 +10,12 @@ Standard Checkbox's with label.
 
 import { Checkbox } from 'nifty-ui';
 
-<div className="flex gap-5">
-  <Checkbox label="Small" size="sm" />
-  <Checkbox label="Medium" size="md" />
-  <Checkbox label="Large" size="lg" />
-  <Checkbox label="Extra Large" size="xl" />
+<div className="flex items-center space-x-2">
+  <Checkbox id="terms" />
+  <label
+    htmlFor="terms"
+    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  >
+    Accept terms and conditions
+  </label>
 </div>
