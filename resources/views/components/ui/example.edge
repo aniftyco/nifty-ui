@@ -1,6 +1,6 @@
 @set('internal', 'This is set internally by the component')
 
 <p>Hello <strong>{{ name || 'World' }}</strong>!</p>
-<p>{{ internal }}</p>
+<p class="text-primary-600">{{ internal }}</p>
 
 {{{ await $slots.main() }}}

@@ -1,8 +1,5 @@
-import type { Config } from 'tailwindcss';
+import { defineConfig } from './resources/js/defineConfig';
 
-const config: Config = {
-  content: ['./resources/**/*.{edge}'],
-  plugins: [],
-};
-
-export default config;
+export default defineConfig({
+  theme: 'purple',
+});
