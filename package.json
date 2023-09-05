@@ -1,7 +1,7 @@
 {
   "private": true,
   "author": {
-    "name": "Nifty Development, LLC",
+    "name": "NiftyCo, LLC",
     "email": "support@aniftyco.com",
     "url": "https://aniftyco.com"
   },
@@ -9,12 +9,13 @@
     {
       "name": "Josh Manders",
       "url": "https://twitter.com/joshmanders"
+    },
+    {
+      "name": "Daniel Schmelzer",
+      "url": "https://twitter.com/DanielSchmelze6"
     }
   ],
-  "scripts": {
-    "build": "runner build",
-    "start": "runner start"
-  },
+  "scripts": {},
   "workspaces": [
     "docs",
     "packages/nifty-ui"
@@ -24,44 +25,17 @@
     "node": ">=16.17.0"
   },
   "eslintConfig": {
-    "extends": "nifty/react",
-    "ignorePatterns": [
-      "**/*.js",
-      "**/*.jsx"
-    ]
+    "extends": "nifty"
   },
-  "prettier": {
-    "printWidth": 120,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.yaml",
-        "options": {
-          "singleQuote": false
-        }
-      }
-    ]
-  },
+  "prettier": "@aniftyco/prettier",
   "devDependencies": {
-    "@tabler/icons-react": "^2.12.0",
-    "@aniftyco/workspace-scripts": "^0.1.1",
-    "@types/md5": "^2.3.2",
+    "@aniftyco/prettier": "^0.1.0",
+    "@aniftyco/tsconfig": "^0.1.0",
     "@types/node": "^16.18.11",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@types/tinycolor2": "^1.4.3",
     "eslint": "^8.32.0",
     "eslint-config-nifty": "^3.3.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "lerna": "^6.4.1",
     "prettier": "^2.8.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rimraf": "^4.1.2",
-    "tailwindcss": "^3.3.0",
-    "type-fest": "^3.5.7",
     "typescript": "^4.9.4"
   }
 }
