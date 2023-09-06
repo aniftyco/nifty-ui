@@ -1,0 +1,21 @@
+{{--  Set default props:  --}}
+@set('variant', variant || 'default')
+@set('className', className || 'text-white')
+
+{{--  Set classNames based on variants:  --}}
+@if (variant === 'default')
+  @set('className', `${className} bg-gray-500`)
+@elseif (variant === 'info')
+  @set('className', `${className} bg-blue-500`)
+@elseif (variant === 'success')
+  @set('className', `${className} bg-green-500`)
+@elseif (variant === 'warning')
+  @set('className', `${className} bg-yellow-500`)
+@elseif (variant === 'error')
+  @set('className', `${className} bg-red-500`)
+@end
+
+{{--  Component:  --}}
+<div class="{{ className }}">
+    <span>{{{ await $slots.main() }}}</span>
+</div>

@@ -1,0 +1,17 @@
+{{--  Set default props:  --}}
+@set('className', className || 'text-white')
+@set('size', size || 'default')
+
+{{--  Size:  --}}
+@if (size === 'sm')
+  @set('className', `${className} w-14`)
+@elseif (size === 'default')
+  @set('className', `${className} w-24`)
+@elseif (size === 'lg')
+  @set('className', `${className} w-32`)
+@end
+
+{{--  Component:  --}}
+<div class="w-24">
+  <img src="" alt="Text alt" />
+</div>
