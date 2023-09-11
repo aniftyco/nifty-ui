@@ -25,12 +25,12 @@
 @end
 
 {{--  Component:  --}}
-<div class="{{ className }} rounded-full px-2.5 py-0.5 w-fit text-xs font-semibold">
+<button class="{{ className }} inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 rounded-md hover:bg-emerald-300 focus:ring-2 focus:ring-offset-2 focus:ring-emerald-300 focus:shadow-outline focus:outline-none">
     <span>{{{ await $slots.main() }}}</span>
-</div>
+</button>
 
 {{--  Usage (Copy Pasta):
-    @ui.badge({ variant: 'solid'})
-      <p>Badge</p>
+    @ui.button({ variant: 'solid'})
+      <p>Button</p>
     @end
   --}}

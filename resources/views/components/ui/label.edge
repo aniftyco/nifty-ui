@@ -1,4 +1,19 @@
-<label class="flex mx-2">
-  {{{ await $slots.main() }}}
-  <span class="text-primary-600 ml-2">{{ text || 'text' }}</span>
+@set('className', className || 'text-emerald-800')
+@set('size', size || 'default')
+
+{{--  Size:  --}}
+@if (size === 'sm')
+  @set('className', `${className} text-sm`)
+@elseif (size === 'default')
+  @set('className', `${className} text-md`)
+@elseif (size === 'lg')
+  @set('className', `${className} text-lg`)
+@elseif (size === 'xl')
+  @set('className', `${className} text-xl`)
+@end
+
+
+
+<label class="{{ className }} flex mx-2">
+  <span>{{{ await $slots.main() }}}</span>
 </label>
