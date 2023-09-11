@@ -1,0 +1,30 @@
+{{--  Set default props:  --}}
+@set('className', className || 'text-emerald-800')
+@set('size', size || 'default')
+@set('variant', variant || 'default')
+
+{{--  Size:  --}}
+@if (size === 'sm')
+  @set('className', `${className} text-xs font-semibold`)
+@elseif (size === 'default')
+  @set('className', `${className} text-sm text-black font-semibold`)
+@elseif (size === 'lg')
+  @set('className', `${className} text-md font-semibold`)
+@elseif (size === 'xl')
+  @set('className', `${className} text-lg border-4 font-semibold`)
+@end
+
+{{--  variant  --}}
+
+@if (variant === 'default')
+  @set('className', `${className} bg-slate-400 border-slate-800`)
+@elseif (variant === 'solid')
+  @set('className', `${className} bg-emerald-500 border-emerald-800 text-emerald-800 `)
+@elseif (variant === 'outline')
+  @set('className', `${className} bg-transparent border-emerald-800 `)
+@end
+
+{{--  Component:  --}}
+ <div class="{{ className }} mt-5 px-2 w-fit rounded-full border-2">
+    <span>{{{ await $slots.main() }}}</span>
+ </div>
