@@ -8,17 +8,59 @@
   @entryPointScripts('app')
 </head>
 <body>
-
+  <h1 class="flex justify-center text-4xl font-semibold leading-relaxed">Nifty UI :: Kitchen Sink</h1>
+  <hr />
   <main>
-    <h1>Nifty UI :: Kitchen Sink</h1>
-    <hr />
+    {{--  Accordion  --}}
+    <div class="flex flex-col pl-4 my-2 w-5/12">
+      <h2 class='text-2xl font-bold'>Accordion</h2>
+      <div class="w-5/6 my-4">
+        @ui.accordion()
+          @ui.accordion.item({ title: 'Check me out!' })
+            I hold a message, good or bad I exist!
+          @end
 
-    <h2>Example</h2>
-    @ui.banner()
-      @ui.button({ variant: 'solid', size: 'sm'})
-        Click here!
-      @end
-    @end
+          @ui.accordion.item({ title: 'Keep adding items!' })
+            Keep adding items to make this list as long or short as you want!
+          @end
+        @end
+      </div>
+    </div>
+    {{--  Alerts  --}}
+    <div class="flex flex-col">
+      <h2 class='text-2xl font-bold'>Alert</h2>
+      <div class="">
+        @ui.alert({ variant: 'success'})
+          <h5 class='font-bold underline'>Thou hath reached a bitter Success!</h5>
+          <p>Fetch the scribe! Might he record this most joyous of days!</p>
+        @end
+      </div>
+      <div class="">
+        @ui.alert({ variant: 'default'})
+          <h5 class='font-bold underline'>A Default message for you My Lord!</h5>
+          <p>Nifty-UI has made progress on the western banks of the Mississippi!!</p>
+        @end
+      </div>
+      <div class="">
+        @ui.alert({ variant: 'info'})
+          <h5 class='font-bold underline'>Information suggests the filthy Bard has arrived.</h5>
+          <p>This can only mean a Witcher is close by.</p>
+        @end
+      </div>
+      <div class="">
+        @ui.alert({ variant: 'warning'})
+          <h5 class='font-bold underline'>WARNING! Ye Adventure's:</h5>
+          <p>Dragons lair beyond the ridge, use southern passage.</p>
+        @end
+      </div>
+      <div class="">
+        @ui.alert({ variant: 'error'})
+          <h5 class='font-bold underline'>You made a vital ERROR, way to go.</h5>
+          <p>If you can read this, you can't read a compass. Good luck.</p>
+        @end
+      </div>
+    </div>
+    {{-- Badge --}}
 
   </main>
 </body>

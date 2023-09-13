@@ -1,5 +1,9 @@
 import { defineConfig } from './resources/js/defineConfig';
 
 export default defineConfig({
-  theme: 'emerald',
+  accent: 'blue',
+  destructive: 'red',
+  success: 'lime',
+  theme: 'sky',
+  warning: 'orange'
 });

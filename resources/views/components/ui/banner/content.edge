@@ -1,8 +1,0 @@
-@set('message', message || 'Some default message' )
-
-<div class="flex items-center justify-between w-full h-full px-3 mx-auto max-w-7xl ">
-        <a href="#" class="flex flex-col w-full h-full text-xs leading-6 text-black duration-150 ease-out sm:flex-row sm:items-center opacity-80 hover:opacity-100">
-            <span class="block pt-1 pb-2 leading-none sm:inline sm:pt-0 sm:pb-0">{{ message }}</span>
-        </a>
-        {{{ await $slots.main() }}}
-    </div>

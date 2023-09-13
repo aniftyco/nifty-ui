@@ -4,19 +4,21 @@
 
 {{--  Set classNames based on variants:  --}}
 @if (variant === 'default')
-  @set('className', `${className} bg-gray-500`)
+  @set('className', `${className} bg-primary-500/70`)
 @elseif (variant === 'info')
-  @set('className', `${className} bg-blue-500`)
+  @set('className', `${className} bg-accent-500/70`)
 @elseif (variant === 'success')
-  @set('className', `${className} bg-green-500`)
+  @set('className', `${className} bg-success-500/70`)
 @elseif (variant === 'warning')
-  @set('className', `${className} bg-yellow-500`)
+  @set('className', `${className} bg-warning-500/70`)
 @elseif (variant === 'error')
-  @set('className', `${className} bg-red-500`)
+  @set('className', `${className} bg-destructive-500/70`)
 @end
 
 {{--  Component:  --}}
-<div class="{{ className }} relative w-fit rounded-lg  border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 text-nuetral-900">
+<div class="{{ className }}
+    relative w-fit rounded-lg  border p-3
+    [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 text-primary-50">
     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg>
     <span>{{{ await $slots.main() }}}</span>
 </div>
