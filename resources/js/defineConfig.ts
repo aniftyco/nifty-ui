@@ -4,13 +4,15 @@ import colors from 'tailwindcss/colors';
 
 type Theme = keyof DefaultColors;
 
-export const defineConfig = ({ theme }: { theme: Theme } = { theme: 'emerald' }): Config => {
+export const defineConfig = ({ theme }: { theme: Theme } = { theme: 'sky' }): Config => {
   return {
     content: ['./resources/views/**/*'],
     plugins: [],
     theme: {
       extend: {
         colors: {
+          background: "blue-500",
+          foreground: 'cyan-500',
           primary: colors[theme],
         },
       },

@@ -14,13 +14,9 @@
     <hr />
 
     <h2>Example</h2>
-    @ui.accordion()
-      @ui.accordion.item({ title: 'foo' })
-        This is foo content
-      @end
-
-      @ui.accordion.item({ title: 'bar' })
-        This is bar content
+    @ui.banner()
+      @ui.button({ variant: 'solid', size: 'sm'})
+        Click here!
       @end
     @end
 
