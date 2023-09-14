@@ -5,23 +5,23 @@
 
 {{--  Size:  --}}
 @if (size === 'sm')
-  @set('className', `${className} text-xs font-semibold`)
+  @set('className', `${className} text-xs border-2 font-semibold`)
 @elseif (size === 'default')
-  @set('className', `${className} text-sm text-black font-semibold`)
+  @set('className', `${className} text-sm border-2 font-semibold`)
 @elseif (size === 'lg')
-  @set('className', `${className} text-md font-semibold`)
+  @set('className', `${className} text-md border-2 font-semibold`)
 @elseif (size === 'xl')
-  @set('className', `${className} text-lg border-4 font-semibold`)
+  @set('className', `${className} text-lg border-2 font-semibold`)
 @end
 
 {{--  variant  --}}
 
 @if (variant === 'default')
-  @set('className', `${className} bg-slate-400 border-slate-800`)
+  @set('className', `${className} bg-primary-600/70 border-sky-600 text-normal `)
 @elseif (variant === 'solid')
-  @set('className', `${className} bg-emerald-500 border-emerald-800 text-emerald-800 `)
+  @set('className', `${className} bg-primary-600 border-primary-800 text-primary-800 `)
 @elseif (variant === 'outline')
-  @set('className', `${className} bg-transparent border-emerald-800 `)
+  @set('className', `${className} bg-transparent border-primary-800`)
 @end
 
 {{--  Component:  --}}
