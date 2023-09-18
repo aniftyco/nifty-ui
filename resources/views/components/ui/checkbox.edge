@@ -1,4 +1,15 @@
+@set('className', className || '')
+@set('size', size || 'default')
+
+@if (size === 'sm')
+  @set('className', `${className} w-4 h-4 px-2 py-1 rounded-lg`)
+@elseif (size === 'default')
+  @set('className', `${className} w-6 h-6 px-4  py-2 rounded-xl`)
+@elseif (size === 'lg')
+  @set('className', `${className} w-8 h-8 px-6  py-2 rounded-xl`)
+@end
+
 <div class="flex items-center mb-4">
-    <input id="checkbox-id" type="checkbox" class="w-4 h-4 bg-sky-100 border-sky-300 rounded text-sky-900 focus:ring-sky-900">
-    <label for="checkbox-id" class="ml-2 text-sm font-medium text-sky-900">Checkbox</label>
+    <input id="checkbox-id" type="checkbox" class="{{ className }}  bg-primary-100 border-primary-300 rounded text-sky-900 focus:ring-sky-900">
+    <span>{{{ await $slots.main() }}}</span>
 </div>

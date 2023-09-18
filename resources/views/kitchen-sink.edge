@@ -10,9 +10,9 @@
 <body>
   <h1 class="flex justify-center text-4xl font-semibold leading-relaxed">Nifty UI :: Kitchen Sink</h1>
   <hr />
-  <main>
+  <main class="m-4">
     {{--  Accordion  --}}
-    <div class="flex flex-col pl-4 my-2 w-5/12">
+    <div class="flex flex-col my-2 w-5/12">
       <h2 class='text-2xl font-bold'>Accordion</h2>
       <div class="w-5/6 my-4">
         @ui.accordion()
@@ -104,5 +104,131 @@
         <p>Extra-Large outline</p>
       @end
     </div>
+    <div class="flex space-x-2 mt-2">
+      @ui.badge({ variant:'success', size: 'default' })
+        <p>Success!</p>
+      @end
+      @ui.badge({ variant:'warning', size: 'default' })
+        <p>Warning!</p>
+      @end
+      @ui.badge({ variant:'danger', size: 'default' })
+        <p>Danger!</p>
+      @end
+    </div>
+    {{--  Buttons  --}}
+
+    <h2 class='text-2xl font-bold'>Buttons</h2>
+    <div class="flex flex-col gap-2">
+      <div class="flex space-x-2">
+        @ui.button({ variant:'default', size: 'sm' })
+          <p>Default Small</p>
+        @end
+        @ui.button({ variant:'solid', size: 'sm' })
+          <p>Solid Small</p>
+        @end
+        @ui.button({ variant:'outline', size: 'sm' })
+          <p>Outline Small</p>
+        @end
+        @ui.button({ variant:'ghost', size: 'sm' })
+          <p>Ghost Small</p>
+        @end
+        @ui.button({ variant:'link', size: 'sm' })
+          <p>Link Small</p>
+        @end
+      </div>
+      <div class="flex space-x-2">
+        @ui.button({ variant:'default', size: 'default' })
+          <p>Default Default</p>
+        @end
+        @ui.button({ variant:'solid', size: 'default' })
+          <p>Solid Default</p>
+        @end
+        @ui.button({ variant:'outline', size: 'default' })
+          <p>Outline Default</p>
+        @end
+        @ui.button({ variant:'ghost', size: 'default' })
+          <p>Ghost Default</p>
+        @end
+        @ui.button({ variant:'link', size: 'default' })
+          <p>Link Default</p>
+        @end
+      </div>
+      <div class="flex space-x-2">
+        @ui.button({ variant:'default', size: 'lg'})
+          <p>Default Large</p>
+        @end
+        @ui.button({ variant:'solid', size: 'lg' })
+          <p>Solid Large</p>
+        @end
+        @ui.button({ variant:'outline', size: 'lg' })
+          <p>Outline Large</p>
+        @end
+        @ui.button({ variant:'ghost', size: 'lg' })
+          <p>Ghost Large</p>
+        @end
+        @ui.button({ variant:'link', size: 'lg' })
+          <p>Link Large</p>
+        @end
+      </div>
+      <div class="flex space-x-2">
+        @ui.button({ variant:'default', size: 'xl'})
+          <p>Default X-Large</p>
+        @end
+        @ui.button({ variant:'solid', size: 'xl' })
+          <p>Solid X-Large</p>
+        @end
+        @ui.button({ variant:'outline', size: 'xl' })
+          <p>Outline X-Large</p>
+        @end
+        @ui.button({ variant:'ghost', size: 'xl' })
+          <p>Ghost X-Large</p>
+        @end
+        @ui.button({ variant:'link', size: 'xl' })
+          <p>Link X-Large</p>
+        @end
+      </div>
+      <h3 class="text-lg font-semibold">Custom Button</h3>
+      <div class="flex space-x-2">
+        @ui.button({ variant:'custom', size: 'default', className: 'bg-violet-600 text-violet-50 underline border border-violet-100 shadow-inner hover:bg-violet-800/80'})
+          <p>Custom Button!</p>
+        @end
+      </div>
+
+      {{--  Checkbox  --}}
+
+      <h2 class='text-2xl font-bold'>Checkboxes</h2>
+      <div class="flex gap-2">
+        @ui.checkbox({ size: 'sm'})
+          @ui.label({ size: 'sm'})
+            Small Checkbox
+          @end
+        @end
+        @ui.checkbox({ size: 'default'})
+          @ui.label({ size: 'default'})
+            Default Checkbox
+          @end
+        @end
+        @ui.checkbox({ size: 'lg'})
+          @ui.label({ size: 'lg'})
+            Large Checkbox
+          @end
+        @end
+    </div>
+
+    {{--  Table  --}}
+    <h2 class='text-2xl font-bold'>Table</h2>
+      <div class="flex gap-2 w-1/2">
+        @ui.table()
+        @end
+    </div>
+
+    {{--  Textarea  --}}
+    <h2 class='text-2xl font-bold'>Textarea</h2>
+      <div class="flex gap-2 w-1/2">
+        @ui.textarea()
+        @end
+    </div>
+
+
   </main>
 </body>

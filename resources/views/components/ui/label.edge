@@ -1,4 +1,4 @@
-@set('className', className || 'text-emerald-800')
+@set('className', className || 'text-sky-800')
 @set('size', size || 'default')
 
 {{--  Size:  --}}
@@ -12,7 +12,7 @@
   @set('className', `${className} text-xl`)
 @end
 
-
+{{--  Variant  --}}
 
 <label class="{{ className }} flex mx-2">
   <span>{{{ await $slots.main() }}}</span>

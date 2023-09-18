@@ -1,5 +1,5 @@
 {{--  Set default props:  --}}
-@set('className', className || 'text-emerald-800')
+@set('className', className || '')
 @set('size', size || 'default')
 @set('variant', variant || 'default')
 
@@ -17,15 +17,21 @@
 {{--  variant  --}}
 
 @if (variant === 'default')
-  @set('className', `${className} bg-primary-600/70 border-sky-600 text-normal `)
+  @set('className', `${className} bg-primary-600/70 border-sky-600 text-primary-50 `)
 @elseif (variant === 'solid')
-  @set('className', `${className} bg-primary-600 border-primary-800 text-primary-800 `)
+  @set('className', `${className} bg-primary-500/80 border-primary-800 text-primary-100 `)
 @elseif (variant === 'outline')
-  @set('className', `${className} bg-transparent border-primary-800`)
+  @set('className', `${className} bg-transparent border-primary-800 text-primary-900`)
+@elseif (variant === 'success')
+  @set('className', `${className} bg-success-500/80 border-success-300 text-success-50`)
+@elseif (variant === 'warning')
+  @set('className', `${className} bg-warning-500/80 border-warning-300 text-warning-50`)
+@elseif (variant === 'danger')
+  @set('className', `${className} bg-destructive-500/80 border-destructive-300 text-destructive-50`)
 @end
 
 {{--  Component:  --}}
-<div class="{{ className }} rounded-full px-2.5 py-0.5 w-fit font-semibold">
+<div class="{{ className }}  rounded-full px-2.5 py-0.5 w-fit font-semibold">
     <span>{{{ await $slots.main() }}}</span>
 </div>
 
