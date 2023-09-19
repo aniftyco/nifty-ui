@@ -27,7 +27,7 @@
       </div>
     </div>
     {{--  Alerts  --}}
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-2">
 
       <h2 class='text-2xl font-bold'>Alert</h2>
 
@@ -36,7 +36,7 @@
           <p>Fetch the scribe! Might he record this most joyous of days!</p>
         @end
 
-        @ui.alert({ variant: 'default'})
+        @ui.alert({ variant: 'primary'})
           <h5 class='font-bold underline'>A Default message for you My Lord!</h5>
           <p>Nifty-UI has made progress on the western banks of the Mississippi!!</p>
         @end
@@ -60,7 +60,7 @@
 
     <h2 class='text-2xl font-bold'>Badges</h2>
     <div class="flex space-x-2">
-      @ui.badge({ variant: 'default'})
+      @ui.badge({ variant: 'primary'})
         <p>Default</p>
       @end
       @ui.badge({ variant: 'solid'})
@@ -119,80 +119,79 @@
 
     <h2 class='text-2xl font-bold'>Buttons</h2>
     <div class="flex flex-col gap-2">
-      <div class="flex space-x-2">
-        @ui.button({ variant:'default', size: 'sm' })
-          <p>Default Small</p>
+     <div class="flex space-x-2">
+        @ui.button({ size: 'sm', variant: 'primary' })
+          Primary Small
         @end
-        @ui.button({ variant:'solid', size: 'sm' })
-          <p>Solid Small</p>
+        @ui.button({ size: 'sm', variant: 'solid' })
+          Solid Small
         @end
-        @ui.button({ variant:'outline', size: 'sm' })
-          <p>Outline Small</p>
+        @ui.button({ size: 'sm', variant: 'outline' })
+          Outline Small
         @end
-        @ui.button({ variant:'ghost', size: 'sm' })
-          <p>Ghost Small</p>
+        @ui.button({ size: 'sm', variant: 'link' })
+          Link Small
         @end
-        @ui.button({ variant:'link', size: 'sm' })
-          <p>Link Small</p>
-        @end
-      </div>
-      <div class="flex space-x-2">
-        @ui.button({ variant:'default', size: 'default' })
-          <p>Default Default</p>
-        @end
-        @ui.button({ variant:'solid', size: 'default' })
-          <p>Solid Default</p>
-        @end
-        @ui.button({ variant:'outline', size: 'default' })
-          <p>Outline Default</p>
-        @end
-        @ui.button({ variant:'ghost', size: 'default' })
-          <p>Ghost Default</p>
-        @end
-        @ui.button({ variant:'link', size: 'default' })
-          <p>Link Default</p>
+        @ui.button({ size: 'sm', variant: 'ghost' })
+          Ghost Small
         @end
       </div>
-      <div class="flex space-x-2">
-        @ui.button({ variant:'default', size: 'lg'})
-          <p>Default Large</p>
+    {{--  md  --}}
+     <div class="flex space-x-2">
+        @ui.button({ size: 'md', variant: 'primary' })
+          Primary Medium
         @end
-        @ui.button({ variant:'solid', size: 'lg' })
-          <p>Solid Large</p>
+        @ui.button({ size: 'md', variant: 'solid' })
+          Solid Medium
         @end
-        @ui.button({ variant:'outline', size: 'lg' })
-          <p>Outline Large</p>
+        @ui.button({ size: 'md', variant: 'outline' })
+          Outline Medium
         @end
-        @ui.button({ variant:'ghost', size: 'lg' })
-          <p>Ghost Large</p>
+        @ui.button({ size: 'md', variant: 'link' })
+          Link Medium
         @end
-        @ui.button({ variant:'link', size: 'lg' })
-          <p>Link Large</p>
-        @end
-      </div>
-      <div class="flex space-x-2">
-        @ui.button({ variant:'default', size: 'xl'})
-          <p>Default X-Large</p>
-        @end
-        @ui.button({ variant:'solid', size: 'xl' })
-          <p>Solid X-Large</p>
-        @end
-        @ui.button({ variant:'outline', size: 'xl' })
-          <p>Outline X-Large</p>
-        @end
-        @ui.button({ variant:'ghost', size: 'xl' })
-          <p>Ghost X-Large</p>
-        @end
-        @ui.button({ variant:'link', size: 'xl' })
-          <p>Link X-Large</p>
+        @ui.button({ size: 'md', variant: 'ghost' })
+          Ghost Medium
         @end
       </div>
-      <h3 class="text-lg font-semibold">Custom Button</h3>
+      {{--  large  --}}
       <div class="flex space-x-2">
-        @ui.button({ variant:'custom', size: 'default', className: 'bg-violet-600 text-violet-50 underline border border-violet-100 shadow-inner hover:bg-violet-800/80'})
-          <p>Custom Button!</p>
+        @ui.button({ size: 'lg', variant: 'primary' })
+          Primary Large
+        @end
+        @ui.button({ size: 'lg', variant: 'solid' })
+          Solid Large
+        @end
+        @ui.button({ size: 'lg', variant: 'outline' })
+          Outline Large
+        @end
+        @ui.button({ size: 'lg', variant: 'link' })
+          Link Large
+        @end
+        @ui.button({ size: 'lg', variant: 'ghost' })
+          Ghost Large
         @end
       </div>
+  {{--  XL--}}
+      <div class="flex space-x-2">
+        @ui.button({ size: 'xl', variant: 'primary' })
+          Primary X-Large
+        @end
+        @ui.button({ size: 'xl', variant: 'solid' })
+          Solid X-Large
+        @end
+        @ui.button({ size: 'xl', variant: 'outline' })
+          Outline X-Large
+        @end
+        @ui.button({ size: 'xl', variant: 'link' })
+          Link X-Large
+        @end
+        @ui.button({ size: 'xl', variant: 'ghost' })
+          Ghost X-Large
+        @end
+      </div>
+    </div>
+
 
       {{--  Checkbox  --}}
 
@@ -203,8 +202,8 @@
             Small Checkbox
           @end
         @end
-        @ui.checkbox({ size: 'default'})
-          @ui.label({ size: 'default'})
+        @ui.checkbox({ size: 'md'})
+          @ui.label({ size: 'md'})
             Default Checkbox
           @end
         @end

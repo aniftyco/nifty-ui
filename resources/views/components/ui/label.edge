@@ -1,19 +1,19 @@
-@set('className', className || 'text-sky-800')
+@set('className', className || '')
 @set('size', size || 'default')
 
-{{--  Size:  --}}
-@if (size === 'sm')
-  @set('className', `${className} text-sm`)
-@elseif (size === 'default')
-  @set('className', `${className} text-md`)
-@elseif (size === 'lg')
-  @set('className', `${className} text-lg`)
-@elseif (size === 'xl')
-  @set('className', `${className} text-xl`)
-@end
+{{--  base  --}}
+@set('base', clsx(['flex mx-2 text-primary-950/70 dark:text-primary-50']))
+
+{{--  sizes  --}}
+@set('sizes', {
+  'text-sm': size === 'sm',
+  'text-md': size === 'md',
+  'text-lg': size === 'lg',
+  'text-xl': size === 'xl'
+})
 
 {{--  Variant  --}}
 
-<label class="{{ className }} flex mx-2">
+<label class="{{ clsx(base, sizes ) }}">
   <span>{{{ await $slots.main() }}}</span>
 </label>
