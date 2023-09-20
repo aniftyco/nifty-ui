@@ -222,12 +222,24 @@
     </div>
 
     {{--  Textarea  --}}
+    <div>
     <h2 class='text-2xl font-bold'>Textarea</h2>
       <div class="flex gap-2 w-1/2">
         @ui.textarea()
         @end
+       </div>
+    @ui.label()
+      Name:
+      @!ui.input({ type: 'name', placeholder: 'Name', size: 'sm' })
+    @end
+    @ui.label()
+      Email:
+      @!ui.input({ type: 'email', placeholder: 'Email' })
+    @end
+    @ui.label()
+      Password:
+      @!ui.input({ type: 'password', placeholder: 'Password', size: 'lg' })
+    @end
     </div>
-
-
   </main>
 </body>
