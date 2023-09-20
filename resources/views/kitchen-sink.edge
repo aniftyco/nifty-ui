@@ -223,23 +223,37 @@
 
     {{--  Textarea  --}}
     <div>
-    <h2 class='text-2xl font-bold'>Textarea</h2>
+      <h2 class='text-2xl font-bold'>Textarea</h2>
       <div class="flex gap-2 w-1/2">
         @ui.textarea()
         @end
-       </div>
-    @ui.label()
-      Name:
-      @!ui.input({ type: 'name', placeholder: 'Name', size: 'sm' })
-    @end
-    @ui.label()
-      Email:
-      @!ui.input({ type: 'email', placeholder: 'Email' })
-    @end
-    @ui.label()
-      Password:
-      @!ui.input({ type: 'password', placeholder: 'Password', size: 'lg' })
-    @end
+      </div>
+    </div>
+
+    {{--  Input  --}}
+    <div>
+      <h2 class='text-2xl font-bold'>Input</h2>
+      <div class="flex flex-col gap-2 w-1/2">
+      @ui.label()
+        Text Small
+        @!ui.input({ type: 'name', placeholder: 'Name', size: 'sm' })
+      @end
+      @ui.label()
+        Email Medium (Default)
+        @!ui.input({ type: 'email', placeholder: 'Email' })
+      @end
+      @ui.label()
+        Password Large
+        @!ui.input({ type: 'password', placeholder: 'Password', size: 'lg' })
+      @end
+      </div>
+    </div>
+    {{--  Quote  --}}
+    <div>
+      <h2 class='text-2xl font-bold'>Quote</h2>
+      <div class="flex flex-col gap-2 w-1/2">
+        @!ui.quote()
+      </div>
     </div>
   </main>
 </body>
