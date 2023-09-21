@@ -1,0 +1,31 @@
+@set('position', position || 'right')
+@set('message', message || "")
+
+{{--  Variant  --}}
+
+
+{{--  Components  --}}
+@if(position === 'left')
+<div class="flex space-x-3 align-left">
+  <div >
+      <div class="">
+          <img class="h-10 w-10 rounded-full" src="https://picsum.photos/192/192" />
+      </div>
+  </div>
+  <div class="bg-primary-900/20 text-primary-50 px-3 py-2 rounded-xl ">
+      {{ message }}
+  </div>
+</div>
+@elseif(position === 'right')
+<div class="flex space-x-3">
+    <div class="bg-primary-900 text-primary-50 px-3 py-2 rounded-xl ">
+      {{ message }}
+
+    </div>
+  <div >
+    <div class="">
+        <img class="h-10 w-10 rounded-full" src="https://picsum.photos/192/192" />
+    </div>
+  </div>
+</div>
+@end

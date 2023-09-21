@@ -10,249 +10,29 @@
 <body>
   <h1 class="flex justify-center text-4xl font-semibold leading-relaxed">Nifty UI :: Kitchen Sink</h1>
   <hr />
-  <main class="m-4">
-    {{--  Accordion  --}}
-    <div class="flex flex-col my-2 w-5/12">
-      <h2 class='text-2xl font-bold'>Accordion</h2>
-      <div class="w-5/6 my-4">
-        @ui.accordion()
-          @ui.accordion.item({ title: 'Check me out!' })
-            I hold a message, good or bad I exist!
-          @end
+  <main class="m-4 ">
 
-          @ui.accordion.item({ title: 'Keep adding items!' })
-            Keep adding items to make this list as long or short as you want!
-          @end
-        @end
+    <div class="flex flex-col my-2">
+      <div class="space-y-4 w-7/12 border-4 p-5 rounded-xl">
+        <div class="flex flex-col items-end">
+        @!ui.chat({message: 'It was said that you would, destroy the Sith, not join them.'})
+        </div>
+        <div>
+        @!ui.chat({ position: 'left', message: 'but that is too boring man, I just wanna watch the world burn.'})
+        </div>
+        <div class="flex flex-col items-end">
+        @!ui.chat({message: 'Whatever man, i have the highground. get wrecked.'})
+        </div>
       </div>
+
     </div>
-    {{--  Alerts  --}}
-    <div class="flex flex-col gap-2">
-
-      <h2 class='text-2xl font-bold'>Alert</h2>
-
-        @ui.alert({ variant: 'success'})
-          <h5 class='font-bold underline'>Thou hath reached a bitter Success!</h5>
-          <p>Fetch the scribe! Might he record this most joyous of days!</p>
-        @end
-
-        @ui.alert({ variant: 'primary'})
-          <h5 class='font-bold underline'>A Default message for you My Lord!</h5>
-          <p>Nifty-UI has made progress on the western banks of the Mississippi!!</p>
-        @end
-
-        @ui.alert({ variant: 'info'})
-          <h5 class='font-bold underline'>Information suggests the filthy Bard has arrived.</h5>
-          <p>This can only mean a Witcher is close by.</p>
-        @end
-
-        @ui.alert({ variant: 'warning'})
-          <h5 class='font-bold underline'>WARNING! Ye Adventure's:</h5>
-          <p>Dragons lair beyond the ridge, use southern passage.</p>
-        @end
-
-        @ui.alert({ variant: 'error'})
-          <h5 class='font-bold underline'>You made a vital ERROR, way to go.</h5>
-          <p>If you can read this, you can't read a compass. Good luck.</p>
-        @end
-    </div>
-    {{-- Badge --}}
-
-    <h2 class='text-2xl font-bold'>Badges</h2>
-    <div class="flex space-x-2">
-      @ui.badge({ variant: 'primary'})
-        <p>Default</p>
+    <div class="flex flex-col w-7/12">
+      <h2 class="mx-2">Tell em' what you really think:</h2>
+      <div class="flex w-full">
+      @!ui.textarea()
+      @ui.button({ variant: 'outline'})
+        Send
       @end
-      @ui.badge({ variant: 'solid'})
-        <p>Solid</p>
-      @end
-
-      @ui.badge({ variant: 'outline'})
-        <p>outline</p>
-      @end
-    </div>
-    <div class="flex space-x-2 mt-2">
-      @ui.badge({ size: 'sm' })
-        <p>Small Default</p>
-      @end
-      @ui.badge({ variant: 'solid', size: 'sm' })
-        <p>small solid</p>
-      @end
-      @ui.badge({ variant:'outline', size: 'sm' })
-        <p>small outline</p>
-      @end
-    </div>
-    <div class="flex space-x-2 mt-2">
-      @ui.badge({ size: 'lg' })
-        <p>Large Default</p>
-      @end
-      @ui.badge({ variant: 'solid', size: 'lg' })
-        <p>Large solid</p>
-      @end
-      @ui.badge({ variant:'outline', size: 'lg' })
-        <p>Large outline</p>
-      @end
-    </div>
-    <div class="flex space-x-2 mt-2">
-      @ui.badge({ size: 'xl' })
-        <p>Extra-Large Default</p>
-      @end
-      @ui.badge({ variant: 'solid', size: 'xl' })
-        <p>Extra-Large solid</p>
-      @end
-      @ui.badge({ variant:'outline', size: 'xl' })
-        <p>Extra-Large outline</p>
-      @end
-    </div>
-    <div class="flex space-x-2 mt-2">
-      @ui.badge({ variant:'success', size: 'default' })
-        <p>Success!</p>
-      @end
-      @ui.badge({ variant:'warning', size: 'default' })
-        <p>Warning!</p>
-      @end
-      @ui.badge({ variant:'danger', size: 'default' })
-        <p>Danger!</p>
-      @end
-    </div>
-    {{--  Buttons  --}}
-
-    <h2 class='text-2xl font-bold'>Buttons</h2>
-    <div class="flex flex-col gap-2">
-     <div class="flex space-x-2">
-        @ui.button({ size: 'sm', variant: 'primary' })
-          Primary Small
-        @end
-        @ui.button({ size: 'sm', variant: 'solid' })
-          Solid Small
-        @end
-        @ui.button({ size: 'sm', variant: 'outline' })
-          Outline Small
-        @end
-        @ui.button({ size: 'sm', variant: 'link' })
-          Link Small
-        @end
-        @ui.button({ size: 'sm', variant: 'ghost' })
-          Ghost Small
-        @end
-      </div>
-    {{--  md  --}}
-     <div class="flex space-x-2">
-        @ui.button({ size: 'md', variant: 'primary' })
-          Primary Medium
-        @end
-        @ui.button({ size: 'md', variant: 'solid' })
-          Solid Medium
-        @end
-        @ui.button({ size: 'md', variant: 'outline' })
-          Outline Medium
-        @end
-        @ui.button({ size: 'md', variant: 'link' })
-          Link Medium
-        @end
-        @ui.button({ size: 'md', variant: 'ghost' })
-          Ghost Medium
-        @end
-      </div>
-      {{--  large  --}}
-      <div class="flex space-x-2">
-        @ui.button({ size: 'lg', variant: 'primary' })
-          Primary Large
-        @end
-        @ui.button({ size: 'lg', variant: 'solid' })
-          Solid Large
-        @end
-        @ui.button({ size: 'lg', variant: 'outline' })
-          Outline Large
-        @end
-        @ui.button({ size: 'lg', variant: 'link' })
-          Link Large
-        @end
-        @ui.button({ size: 'lg', variant: 'ghost' })
-          Ghost Large
-        @end
-      </div>
-  {{--  XL--}}
-      <div class="flex space-x-2">
-        @ui.button({ size: 'xl', variant: 'primary' })
-          Primary X-Large
-        @end
-        @ui.button({ size: 'xl', variant: 'solid' })
-          Solid X-Large
-        @end
-        @ui.button({ size: 'xl', variant: 'outline' })
-          Outline X-Large
-        @end
-        @ui.button({ size: 'xl', variant: 'link' })
-          Link X-Large
-        @end
-        @ui.button({ size: 'xl', variant: 'ghost' })
-          Ghost X-Large
-        @end
-      </div>
-    </div>
-
-
-      {{--  Checkbox  --}}
-
-      <h2 class='text-2xl font-bold'>Checkboxes</h2>
-      <div class="flex gap-2">
-        @ui.checkbox({ size: 'sm'})
-          @ui.label({ size: 'sm'})
-            Small Checkbox
-          @end
-        @end
-        @ui.checkbox({ size: 'md'})
-          @ui.label({ size: 'md'})
-            Default Checkbox
-          @end
-        @end
-        @ui.checkbox({ size: 'lg'})
-          @ui.label({ size: 'lg'})
-            Large Checkbox
-          @end
-        @end
-    </div>
-
-    {{--  Table  --}}
-    <h2 class='text-2xl font-bold'>Table</h2>
-      <div class="flex gap-2 w-1/2">
-        @ui.table()
-        @end
-    </div>
-
-    {{--  Textarea  --}}
-    <div>
-      <h2 class='text-2xl font-bold'>Textarea</h2>
-      <div class="flex gap-2 w-1/2">
-        @ui.textarea()
-        @end
-      </div>
-    </div>
-
-    {{--  Input  --}}
-    <div>
-      <h2 class='text-2xl font-bold'>Input</h2>
-      <div class="flex flex-col gap-2 w-1/2">
-      @ui.label()
-        Text Small
-        @!ui.input({ type: 'name', placeholder: 'Name', size: 'sm' })
-      @end
-      @ui.label()
-        Email Medium (Default)
-        @!ui.input({ type: 'email', placeholder: 'Email' })
-      @end
-      @ui.label()
-        Password Large
-        @!ui.input({ type: 'password', placeholder: 'Password', size: 'lg' })
-      @end
-      </div>
-    </div>
-    {{--  Quote  --}}
-    <div>
-      <h2 class='text-2xl font-bold'>Quote</h2>
-      <div class="flex flex-col gap-2 w-1/2">
-        @!ui.quote()
       </div>
     </div>
   </main>
