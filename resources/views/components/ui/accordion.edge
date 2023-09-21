@@ -1,0 +1,27 @@
+<div x-data="{
+        activeAccordion: '',
+        setActiveAccordion(id) {
+            this.activeAccordion = (this.activeAccordion == id) ? '' : id
+        }
+    }" class="
+      relative w-full mx-auto overflow-hidden text-sm font-normal border-2 divide-y-2 rounded-md
+      bg-primary-500 border-primary-900 divide-primary-400 text-primary-50">
+    {{{ await $slots.main() }}}
+</div>
+
+{{ inspect(clsx('text-red-400', { 'bg-red-500': true, 'bg-red-600': true })) }}
+
+
+{{--  Usage (Copy Pasta)
+
+@ui.accordion()
+  @ui.accordion.item({ title: 'foo' })
+    This is foo content
+  @end
+
+  @ui.accordion.item({ title: 'bar' })
+    This is bar content
+  @end
+@end
+
+--}}

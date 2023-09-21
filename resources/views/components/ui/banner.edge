@@ -1,0 +1,27 @@
+@set('className', className || '')
+@set('closeable', closeable)
+
+<div x-data="{
+        bannerVisible: false,
+        bannerVisibleAfter: 300,
+    }"
+    x-show="bannerVisible"
+    x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="-translate-y-10"
+    x-transition:enter-end="translate-y-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-y-0"
+    x-transition:leave-end="-translate-y-10"
+    x-init="
+        setTimeout(()=>{ bannerVisible = true }, bannerVisibleAfter);
+
+    "
+    class="fixed top-0 left-0 w-full h-auto py-1 duration-300 ease-out bg-sky-700 shadow-sm sm:px-2 sm:h-10 {{ className }}" x-cloak>
+    {{{ await $slots.main() }}}
+
+    @if (closeable)
+      <button class="flex items-center flex-shrink-0 translate-x-1 ease-out duration-150 justify-center w-6 h-6 p-1.5 text-black rounded-full hover:bg-neutral-100">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+  @end
+</div>

@@ -1,0 +1,17 @@
+@set('className', className || '')
+@set('size', size ?? 'md')
+
+{{--  base  --}}
+@set('base', clsx(['bg-primary-100 border-primary-300 rounded text-sky-900 focus:ring-sky-900']))
+
+{{--  Sizes  --}}
+@set('sizes', {
+  'w-4 h-4 px-2 py-1 rounded-lg': size === 'sm',
+  'w-6 h-6 px-4  py-2 rounded-xl': size === 'md',
+  'w-8 h-8 px-6  py-2 rounded-xl': size === 'lg'
+})
+
+<div class="flex items-center mb-4">
+    <input id="checkbox-id" type="checkbox" class="{{ clsx(base, sizes) }}">
+    <span>{{{ await $slots.main() }}}</span>
+</div>

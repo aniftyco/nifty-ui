@@ -1,0 +1,31 @@
+{{--  Set default props:  --}}
+@set('size', size ?? 'md')
+@set('variant', variant ?? 'primary')
+
+{{--   Base  --}}
+@set('base', clsx(['rounded-full px-2.5 py-0.5 w-fit border-2 font-semibold']))
+
+{{--  Size:  --}}
+@set('sizes', {
+  'text-xs': size === 'sm',
+  'text-sm': size === 'md',
+  'text-md': size === 'lg',
+  'text-lg': size === 'xl'
+})
+
+
+{{--  variant  --}}
+@set('variants', {
+  'bg-primary-600/70 border-sky-600 text-primary-50': variant === 'primary',
+  'bg-primary-500/80 border-primary-800 text-primary-100': variant === 'solid',
+  'bg-transparent border-primary-800 text-primary-900': variant === 'outline',
+  'bg-success-500/80 border-success-300 text-success-50': variant === 'success',
+  'bg-warning-500/80 border-warning-300 text-warning-50': variant === 'warning',
+  'bg-destructive-500/80 border-destructive-300 text-destructive-50': variant === 'danger'
+})
+
+{{--  Component:  --}}
+<div class="{{ clsx(base, sizes, variants) }} ">
+    <span>{{{ await $slots.main() }}}</span>
+</div>
+

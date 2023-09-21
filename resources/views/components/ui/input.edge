@@ -1,0 +1,20 @@
+{{--  Props  --}}
+@set('size', size ?? 'md')
+@set('type', type ?? 'text')
+@set('placeholder', placeholder ?? 'Name')
+
+{{--  Base  --}}
+@set('base', clsx(['flex w-full h-10 px-3 py-2 text-sm dark:bg-primary-50 border rounded-md border-primary-200 bg-primary-800 ring-offset-background placeholder:text-accent-500 focus:border-accent-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400 disabled:cursor-not-allowed disabled:opacity-50']))
+
+{{--  Sizes  --}}
+@set("sizes", {
+  'text-xs h-4 py-3': size === 'sm',
+  'text-md h-8': size === 'md',
+  'text-xl h-12': size === 'lg',
+
+})
+
+{{--  Component  --}}
+<div class="w-full max-w-xs mx-auto">
+    <input type={{ type }} placeholder={{ placeholder }} class="{{ clsx(base, sizes)}}" />
+</div>
