@@ -1,5 +1,8 @@
 import 'tailwindcss/tailwind.css';
+
 import Alpine from 'alpinejs';
+
+import collapse from '@alpinejs/collapse';
 
 declare global {
   interface Window {
@@ -9,4 +12,5 @@ declare global {
 
 window.Alpine = Alpine;
 
+Alpine.plugin(collapse);
 Alpine.start();

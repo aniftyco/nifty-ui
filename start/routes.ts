@@ -20,4 +20,9 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 
-Route.on('/').render('kitchen-sink');
+Route.on('/').redirect('docs.index');
+
+Route.group(() => {
+  Route.on('/').redirect('docs.show', ['getting-started']).as('docs.index');
+  Route.get('/*', ({ view, params }) => view.render(`docs/${params['*'].join('/')}`)).as('docs.show');
+}).prefix('docs');

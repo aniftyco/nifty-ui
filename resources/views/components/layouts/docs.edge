@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - Nifty UI</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body class="bg-slate-950 text-slate-400 h-screen w-screen">
+  <header class="border-b border-slate-800 p-6 flex justify-between">
+    <h1 class="font-semibold text-xl tracking-wider">Nifty UI</h1>
+    <section>
+      <a href="https://github.com/aniftyco/nifty-ui" class="group">
+        @!ui.icon({ name: 'brand-github-filled', className: 'w-6 h-6 group-hover:text-white' })
+      </a>
+    </section>
+  </header>
+  <section class="flex min-h-full">
+    <aside class="border-r border-slate-800 w-[250px] min-h-full">
+      <ul>
+        <li><a href="{{ route('docs.show', ['getting-started']) }}">Getting Started</a></li>
+        <li>
+          <span>Components</span>
+          <ul>
+            <li><a href="{{ route('docs.show', ['components', 'accordion']) }}">Accordion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="flex-1 mx-24 mb-16 px-5 pt-16 prose prose-slate prose-invert prose-xl prose-headings:text-slate-300 prose-p:text-slate-400">
+      <h1>{{ title }}</h1>
+      {{{ await $slots.main() }}}
+    </main>
+  </section>
+</body>
+</html>

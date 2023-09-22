@@ -1,0 +1,58 @@
+@set('title', 'Getting Started')
+
+@layouts.docs({ title })
+  <h2>Installation</h2>
+  <p>Before creating a new application, you should ensure that you have Node.js and npm installed on your computer. AdonisJS needs <code>Node.js >= 18</code>.</p>
+  <p>You may install Node.js using either the <a href="#">official installers</a> or <a href="#">Volta</a>. Volta is a cross-platform package manager to install and run multiple Node.js versions on your computer.</p>
+  <pre><code>node -v
+# v18.16.0</code></pre>
+  <hr />
+
+  <h3>Creating a new application</h3>
+  <p>You may create a new project using npm init, yarn create or pnpm create. These commands will download the create-adonisjs initializer package and begin the installation process.</p>
+  <p>During installation, you must select a starter kit for the initial project structure. Optionally, you may also configure ESLint and Prettier</p>
+  <pre><code>npm init adonisjs@latest hello-world</code></pre>
+  <hr />
+
+  <h3>Starter kits</h3>
+  <p>Starter kits serve as a starting point for creating applications using AdonisJS. They come with an opinionated folder structure, pre-configured AdonisJS packages, and the necessary tooling you need during development.</p>
+  <h4>Web starter kit</h4>
+  <p>The Web starter kit is tailored for creating traditional server renderer web apps. Do not let the keyword "traditional" discourage you. We recommend this starter kit if you make a web app with limited frontend interactivity.</p>
+  <p>The simplicity of rendering HTML on the server using Edge.js will boost your productivity as you do not have to deal with complex build systems to render some HTML.</p>
+  <p>Later, you can use Hotwire, HTMX, or Unpoly to make your applications navigate like a SPA and use Alpine.js to create interactive widgets like a dropdown or a modal.</p>
+  <p>The web starter kit comes with the following packages.</p>
+  <hr />
+
+  <h3>Starting the development server</h3>
+  <p>You may start the development server by running the <code>node ace serve</code> command.</p>
+  <p>Ace is a command line framework bundled inside the framework's core. The <code>--watch</code> flag monitors the file system and restarts the development server on file change.</p>
+  <pre><code>node ace serve --watch</code></pre>
+  <p>Once the development server runs, you may visit <a href="#">http://localhost:3333</a> to view your application in a browser.</p>
+  <hr />
+
+  <h3>Building for production</h3>
+  <p>Since AdonisJS applications are written in TypeScript, they must get compiled to JavaScript before running in production.</p>
+  <p>You may create the JavaScript output using the <code>node ace build</code> command. The JavaScript output is written to the <code>build</code> directory.</p>
+  <p>When Vite is configured, this command also compiles the frontend assets using Vite and writes the output to the <code>build/public</code> folder.</p>
+  <p>See also: <a href="#">TypeScript build process</a>.</p>
+  <pre><code>node ace build --production</code></pre>
+  <hr />
+
+  <h3>VSCode extensions</h3>
+  <p>You can develop an AdonisJS application on any code editor supporting TypeScript. However, we have developed several extensions for VSCode to enhance the development experience further.</p>
+  <h4>AdonisJS Extension</h4>
+  <p>You can download the <a href="#">AdonisJS extension</a> from the VSCode marketplace. Following are some of the highlighted features of the extension.</p>
+  <ul>
+    <li>Syntax highlighting, autocomplete, and jump to file support for Edge templates.</li>
+    <li>Run <a href="#">Ace</a> commands from the VSCode activity bar.</li>
+    <li>View application routes in the sidebar.</li>
+    <li>And some snippets.</li>
+  </ul>
+  <h4>Japa Extension</h4>
+  <p>Japa is the <a href="#">testing framework</a> used by AdonisJS, and the <a href="#">Japa extension</a> allows you to run your tests without leaving your code editor.</p>
+  <ul>
+    <li>You can click on the code lens to run a specific or all the tests inside a file. The same action can be triggered using keyboard shortcuts.</li>
+    <li>Go to the snapshots file from the test (If using snapshot testing).</li>
+    <li>And some snippets.</li>
+  </ul>
+@end

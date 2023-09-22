@@ -1,0 +1,7 @@
+{{--  Required Props  --}}
+@set('name', name)
+
+{{--  Optional Props  --}}
+@set('className', className ? { class: className } : undefined)
+
+@svg(`tabler:${name}`, className)

@@ -31,30 +31,28 @@
 
       <h2 class='text-2xl font-bold'>Alert</h2>
 
-        @ui.alert({ variant: 'success'})
-          <h5 class='font-bold underline'>Thou hath reached a bitter Success!</h5>
-          <p>Fetch the scribe! Might he record this most joyous of days!</p>
-        @end
 
-        @ui.alert({ variant: 'primary'})
-          <h5 class='font-bold underline'>A Default message for you My Lord!</h5>
+        @ui.alert({ icon: 'photo-check', title: 'A default message for you, my Lord!' })
           <p>Nifty-UI has made progress on the western banks of the Mississippi!!</p>
         @end
 
-        @ui.alert({ variant: 'info'})
-          <h5 class='font-bold underline'>Information suggests the filthy Bard has arrived.</h5>
+        @ui.alert({ variant: 'success', icon: 'alert-circle', title: 'Thou hath reached a bitter Success!' })
+          <p>Fetch the scribe! Might he record this most joyous of days!</p>
+        @end
+
+        @ui.alert({ variant: 'info', icon: 'alert-circle', title: 'Information suggests the filthy Bard has arrived.' })
           <p>This can only mean a Witcher is close by.</p>
         @end
 
-        @ui.alert({ variant: 'warning'})
-          <h5 class='font-bold underline'>WARNING! Ye Adventure's:</h5>
+        @ui.alert({ variant: 'warning', icon: 'alert-circle', title: "WARNING! Ye Adventure's:" })
           <p>Dragons lair beyond the ridge, use southern passage.</p>
         @end
 
-        @ui.alert({ variant: 'error'})
-          <h5 class='font-bold underline'>You made a vital ERROR, way to go.</h5>
+        @ui.alert({ variant: 'error', icon: 'alert-circle', title: 'You made a vital ERROR, way to go.' })
           <p>If you can read this, you can't read a compass. Good luck.</p>
         @end
+
+        @!ui.alert({ variant: 'success', title: 'New post created successfully.' })
     </div>
     {{-- Badge --}}
 

@@ -1,0 +1,40 @@
+@set('title', 'Components / Accordion')
+
+@layouts.docs({ title })
+  <p>This is documentation about the Accordion component.</p>
+  <h2>Example</h2>
+  @docs.example()
+    @ui.accordion({ className: 'bg-slate-900 border-slate-800 divide-slate-800' })
+      @ui.accordion.item({ title: 'Example', className: 'text-slate-300' })
+        This is an example
+      @end
+      @ui.accordion.item({ title: 'Example 2', className: 'text-slate-300' })
+        This is an example
+      @end
+    @end
+  @end
+
+  {{--  @!docs.props([
+    { name: 'className', type: 'string', default: null, description: 'Classes to add to the accordion.' },
+    { name: 'children', type: 'node', default: null, description: 'The content of the accordion.' }
+  ])  --}}
+@end
+
+{{--
+
+  # Components / Accordion
+
+  This is documentation about the Accordion component.
+
+  @example()
+    @ui.accordion({ className: 'bg-slate-900 border-slate-800 divide-slate-800' })
+      @ui.accordion.item({ title: 'Example', className: 'text-slate-300' })
+        This is an example
+      @end
+      @ui.accordion.item({ title: 'Example 2', className: 'text-slate-300' })
+        This is an example
+      @end
+    @end
+  @end
+
+--}}

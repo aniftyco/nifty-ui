@@ -1,6 +1,9 @@
 import type { ApplicationContract } from '@ioc:Adonis/Core/Application';
 import clsx from 'clsx';
+import { addCollection, edgeIconify } from 'edge-iconify';
 import { twMerge } from 'tailwind-merge';
+
+import { icons as tablerIcons } from '@iconify-json/tabler';
 
 export default class AppProvider {
   constructor(protected app: ApplicationContract) {}
@@ -15,6 +18,9 @@ export default class AppProvider {
 
   public async ready() {
     const View = this.app.container.use('Adonis/Core/View');
+
+    addCollection(tablerIcons);
+    View.use(edgeIconify);
 
     View.global('clsx', (...args: any[]) => {
       return twMerge(clsx(...args));

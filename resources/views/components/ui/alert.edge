@@ -1,22 +1,35 @@
 {{--  Set default props:  --}}
+@set('title', title)
+@set('icon', icon)
+@set('className', className)
+@set('variant', variant ?? 'default')
 
-@set('variants', variant ?? 'default')
-@set('className', className ?? 'text-emerald-900')
-
-{{--  Base Style  --}}
-@set('base', clsx(['relative w-fit rounded-lg  border p-3 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11 text-primary-50']))
+{{--  Base styles:  --}}
+@set('base', clsx([
+  'relative w-full rounded-lg border border-transparent p-4',
+  '[&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11',
+]))
 
 {{--  Variants:  --}}
 @set('variants', {
-  'bg-theme-500/70': variant === 'primary',
-  'bg-accent-500/70': variant === 'info',
-  'bg-success-500/70': variant === 'success',
-  'bg-warning-500/70': variant === 'warning',
-  'bg-destructive-500/70': variant === 'error'
+  'bg-gray-50 text-gray-600': variant === 'default',
+  'bg-blue-50 text-blue-600': variant === 'info',
+  'bg-green-50 text-green-600': variant === 'success',
+  'bg-orange-50 text-orange-600': variant === 'warning',
+  'bg-red-50 text-red-600': variant === 'error'
 })
 
 {{--  Component:  --}}
-<div class="{{ clsx(base, variants) }}">
-    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg>
-    {{{ await $slots.main() }}}
+<div class="{{ clsx(base, variants, className) }}">
+    @if(icon)
+      @!ui.icon({ name: icon })
+    @endif
+
+    @if(title)
+      <h5 class="mb-1 font-medium leading-none tracking-tight">{{ title }}</h5>
+    @endif
+
+    @if($slots.main)
+      {{{ await $slots.main() }}}
+    @endif
 </div>

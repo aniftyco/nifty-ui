@@ -1,6 +1,7 @@
 import type { Config as TailwindConfig } from 'tailwindcss';
 import type { DefaultColors } from 'tailwindcss/types/generated/colors';
 import colors from 'tailwindcss/colors';
+import plugin from 'tailwindcss/plugin';
 
 export type Config = {
   theme: keyof DefaultColors;
@@ -8,12 +9,19 @@ export type Config = {
   accent: keyof DefaultColors;
   success: keyof DefaultColors;
   warning: keyof DefaultColors;
-}
+};
 
-export const defineConfig = ({ accent, destructive, theme, success, warning}: Config): TailwindConfig => {
+export const defineConfig = ({ accent, destructive, theme, success, warning }: Config): TailwindConfig => {
   return {
     content: ['./resources/views/**/*'],
-    plugins: [],
+    plugins: [
+      require('@tailwindcss/typography'),
+      plugin(({ addBase }) => {
+        addBase({
+          '[x-cloak]': { display: 'none' },
+        });
+      }),
+    ],
     theme: {
       extend: {
         colors: {
@@ -21,7 +29,7 @@ export const defineConfig = ({ accent, destructive, theme, success, warning}: Co
           destructive: colors[destructive],
           accent: colors[accent],
           success: colors[success],
-          warning: colors[warning]
+          warning: colors[warning],
         },
       },
     },
