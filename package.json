@@ -30,6 +30,12 @@
     "extends": "nifty"
   },
   "prettier": "@aniftyco/prettier",
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
   "devDependencies": {
     "@aniftyco/prettier": "^0.1.0",
     "@aniftyco/tsconfig": "^1.0.1",

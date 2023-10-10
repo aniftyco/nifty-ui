@@ -1,0 +1,33 @@
+{
+  "extends": "@aniftyco/tsconfig",
+  "include": ["**/*"],
+  "exclude": ["node_modules", "build"],
+  "compilerOptions": {
+    "outDir": "build",
+    "rootDir": "./",
+    "paths": {
+      "@app/*": ["./app/*"],
+      "@config/*": ["./config/*"],
+      "@contracts/*": ["./contracts/*"],
+      "@database/*": ["./database/*"],
+      "@utils/*": ["./utils/*"]
+    },
+    "types": [
+      "@adonisjs/core",
+      "@adonisjs/repl",
+      "@adonisjs/session",
+      "@adonisjs/view",
+      "@adonisjs/shield",
+      "@japa/preset-adonis/build/adonis-typings",
+      "@adonisjs/lucid",
+      "adonis-lucid-soft-deletes",
+      "@adonisjs/auth",
+      "@adonisjs/mail",
+      "@rlanz/bull-queue",
+      "@verful/scheduler",
+      "@adonisjs/redis",
+      "@adonisjs/route-model-binding/build/adonis-typings",
+      "@kubit/support/adonis-typings"
+    ]
+  }
+}

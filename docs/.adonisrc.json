@@ -1,0 +1,91 @@
+{
+  "typescript": true,
+  "directories": {
+    "config": "config",
+    "public": "public",
+    "contracts": "contracts",
+    "providers": "providers",
+    "database": "database",
+    "migrations": "database/migrations",
+    "seeds": "database/seeders",
+    "resources": "resources",
+    "views": "resources/views",
+    "start": "start",
+    "tmp": "tmp",
+    "tests": "tests"
+  },
+  "exceptionHandlerNamespace": "@app/Exceptions/Handler",
+  "namespaces": {
+    "models": "@app/Models",
+    "middleware": "@app/Middleware",
+    "exceptions": "@app/Exceptions",
+    "validators": "@app/Validators",
+    "httpControllers": "@app/Controllers",
+    "eventListeners": "@app/Listeners",
+    "redisListeners": "@app/Listeners"
+  },
+  "aliases": {
+    "@app": "app",
+    "@config": "config",
+    "@database": "database",
+    "@contracts": "contracts",
+    "@utils": "utils"
+  },
+  "commands": [
+    "./commands",
+    "@adonisjs/core/build/commands/index.js",
+    "@adonisjs/repl/build/commands",
+    "@adonisjs/lucid/build/commands",
+    "@adonisjs/mail/build/commands",
+    "@rlanz/bull-queue/build/commands",
+    "@verful/scheduler/build/commands"
+  ],
+  "preloads": ["./start/routes", "./start/kernel", "./start/tasks"],
+  "providers": [
+    "./providers/AppProvider",
+    "@adonisjs/core",
+    "@adonisjs/session",
+    "@adonisjs/view",
+    "@adonisjs/shield",
+    "@adonisjs/lucid",
+    "adonis-lucid-soft-deletes",
+    "@adonisjs/auth",
+    "@adonisjs/mail",
+    "@rlanz/bull-queue",
+    "@verful/scheduler",
+    "@adonisjs/redis",
+    "@adonisjs/route-model-binding/build/providers/RmbProvider",
+    "@kubit/support"
+  ],
+  "metaFiles": [
+    {
+      "pattern": "public/**",
+      "reloadServer": false
+    },
+    {
+      "pattern": "resources/views/**/*.edge",
+      "reloadServer": false
+    }
+  ],
+  "aceProviders": ["@adonisjs/repl"],
+  "tests": {
+    "suites": [
+      {
+        "name": "functional",
+        "files": ["tests/functional/**/*.spec.ts"],
+        "timeout": 60000
+      },
+      {
+        "name": "unit",
+        "files": ["tests/unit/**/*.spec.ts"],
+        "timeout": 60000
+      },
+      {
+        "name": "e2e",
+        "files": ["tests/e2e/**/*.spec.ts"],
+        "timeout": 100000
+      }
+    ]
+  },
+  "testProviders": ["@japa/preset-adonis/TestsProvider"]
+}
