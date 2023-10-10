@@ -1,19 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES6",
-    "lib": ["ES6", "DOM", "DOM.Iterable"],
-    "esModuleInterop": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "jsx": "react-jsx",
-    "sourceMap": true,
-    "importHelpers": true,
-    "baseUrl": "src/",
-    "outDir": "dist/"
+    "rootDir": "src",
+    "outDir": "dist"
   },
-  "exclude": ["node_modules"],
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["**/*.ts"],
+  "exclude": ["dist"]
 }

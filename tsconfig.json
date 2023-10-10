@@ -1,5 +1,11 @@
 {
   "extends": "@aniftyco/tsconfig",
-  "include": ["**/*.ts", "**/*.tsx"],
+  "compilerOptions": {
+    "lib": ["ESNEXT", "DOM"],
+    "pretty": true,
+    "declaration": true,
+    "strict": false,
+    "incremental": false
+  },
   "exclude": ["node_modules"]
 }

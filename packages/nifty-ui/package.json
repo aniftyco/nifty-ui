@@ -10,10 +10,6 @@
     "start": "tsc -p tsconfig.json --watch --preserveWatchOutput",
     "build": "rimraf dist && tsc -p tsconfig.json"
   },
-  "dependencies": {
-    
-  },
-  "peerDependencies": {
-    
-  }
+  "dependencies": {},
+  "peerDependencies": {}
 }
