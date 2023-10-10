@@ -15,10 +15,12 @@
       "url": "https://twitter.com/DanielSchmelze6"
     }
   ],
-  "scripts": {},
+  "scripts": {
+    "start": "turbo start"
+  },
   "workspaces": [
     "docs",
-    "packages/nifty-ui"
+    "packages/*"
   ],
   "engines": {
     "npm": ">=v8.15.0",
@@ -30,12 +32,11 @@
   "prettier": "@aniftyco/prettier",
   "devDependencies": {
     "@aniftyco/prettier": "^0.1.0",
-    "@aniftyco/tsconfig": "^0.1.0",
-    "@types/node": "^16.18.11",
-    "eslint": "^8.48.0",
-    "eslint-config-nifty": "^3.3.2",
-    "lerna": "^7.2.0",
+    "@aniftyco/tsconfig": "^1.0.1",
+    "@types/node": "^20.8.4",
+    "lerna": "^7.3.1",
     "prettier": "^3.0.3",
+    "turbo": "^1.10.15",
     "typescript": "^5.2.2"
   }
 }
