@@ -19,6 +19,7 @@ export default class NiftyUiProvider {
     View.use(edgeIconify);
 
     View.mount('ui', join(__dirname, '../views'));
+    View.mount('email', join(__dirname, '../email'));
 
     View.global('clsx', (...args: any[]) => {
       return twMerge(clsx(...args));
