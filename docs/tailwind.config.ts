@@ -2,9 +2,11 @@ import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
+  darkMode: 'class',
   content: ['./resources/views/**/*'],
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     plugin(({ addVariant }) => {
       addVariant('htmx-settling', ['&.htmx-settling', '.htmx-settling &']);
       addVariant('htmx-loading', ['&.htmx-request', '.htmx-request &']);

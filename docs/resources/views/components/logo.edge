@@ -1,0 +1,14 @@
+@set('size', size || 'md')
+@set('className', className)
+
+@if(size === 'md')
+<div class="{{ clsx('select-none flex items-end space-x-1 text-xl', className) }}">
+  <span class="font-medium text-inherit dark:text-white">NIFTY</span>
+  <span class="font-medium bg-gradient-to-l from-fuchsia-600 to-pink-600 text-white px-1.5 rounded-lg">UI</span>
+</div>
+@elseif(size === 'lg')
+<div class="{{ clsx('select-none flex items-end space-x-1 text-4xl', className) }}">
+  <span class="font-semibold text-inherit dark:text-white pb-0.5 mr-1">NIFTY</span>
+  <span class="font-semibold bg-gradient-to-l from-fuchsia-600 to-pink-600 text-white py-0.5 px-1.5 rounded-lg">UI</span>
+</div>
+@end
