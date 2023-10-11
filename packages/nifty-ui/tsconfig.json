@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "types": ["@adonisjs/core", "@types/node"],
     "rootDir": "src",
     "outDir": "dist"
   },

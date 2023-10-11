@@ -3,13 +3,29 @@
   "version": "0.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "start": "tsc -p tsconfig.json --watch --preserveWatchOutput",
-    "build": "rimraf dist && tsc -p tsconfig.json"
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
-  "peerDependencies": {}
+  "files": [
+    "dist",
+    "views",
+    "instructions.md"
+  ],
+  "adonisjs": {
+    "instructionsMd": "./instructions.md",
+    "providers": [
+      "nifty-ui"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@iconify-json/tabler": "^1.1.94",
+    "clsx": "^2.0.0",
+    "edge-iconify": "^1.0.1",
+    "tailwind-merge": "^1.14.0"
+  }
 }

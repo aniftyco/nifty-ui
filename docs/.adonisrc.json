@@ -40,7 +40,11 @@
     "@rlanz/bull-queue/build/commands",
     "@verful/scheduler/build/commands"
   ],
-  "preloads": ["./start/routes", "./start/kernel", "./start/tasks"],
+  "preloads": [
+    "./start/routes",
+    "./start/kernel",
+    "./start/tasks"
+  ],
   "providers": [
     "./providers/AppProvider",
     "@adonisjs/core",
@@ -55,7 +59,8 @@
     "@verful/scheduler",
     "@adonisjs/redis",
     "@adonisjs/route-model-binding/build/providers/RmbProvider",
-    "@kubit/support"
+    "@kubit/support",
+    "nifty-ui"
   ],
   "metaFiles": [
     {
@@ -67,25 +72,35 @@
       "reloadServer": false
     }
   ],
-  "aceProviders": ["@adonisjs/repl"],
+  "aceProviders": [
+    "@adonisjs/repl"
+  ],
   "tests": {
     "suites": [
       {
         "name": "functional",
-        "files": ["tests/functional/**/*.spec.ts"],
+        "files": [
+          "tests/functional/**/*.spec.ts"
+        ],
         "timeout": 60000
       },
       {
         "name": "unit",
-        "files": ["tests/unit/**/*.spec.ts"],
+        "files": [
+          "tests/unit/**/*.spec.ts"
+        ],
         "timeout": 60000
       },
       {
         "name": "e2e",
-        "files": ["tests/e2e/**/*.spec.ts"],
+        "files": [
+          "tests/e2e/**/*.spec.ts"
+        ],
         "timeout": 100000
       }
     ]
   },
-  "testProviders": ["@japa/preset-adonis/TestsProvider"]
+  "testProviders": [
+    "@japa/preset-adonis/TestsProvider"
+  ]
 }

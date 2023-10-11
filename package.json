@@ -37,6 +37,7 @@
     }
   },
   "devDependencies": {
+    "@adonisjs/core": "^5.9.0",
     "@aniftyco/prettier": "^0.1.0",
     "@aniftyco/tsconfig": "^1.0.1",
     "@types/node": "^20.8.4",
