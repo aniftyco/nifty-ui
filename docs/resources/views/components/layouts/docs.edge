@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" hx-boost="true" hx-ext="head-support,body-support" class="light">
+<html lang="en" hx-boost="true" hx-ext="head-support,body-support" class="dark" x-data="{}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,53 +8,58 @@
   @entryPointScripts('app')
 </head>
 <body class="bg-white dark:bg-zinc-900">
-  <header class="border-b bg-white dark:bg-zinc-900 sticky top-0 z-10 flex items-center justify-between px-5 py-3">
+  <header class="border-b dark:border-zinc-700 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-xl sticky top-0 z-10 flex items-center justify-between px-5 py-3">
     <a href="/" title="Nifty UI">
       @!logo({ size: 'md' })
     </a>
     <nav class="flex items-center space-x-5">
-      <a href="{{ route('docs') }}" class="border-b text-slate-900 hover:text-fuchsia-500 hover:border-fuchsia-200">Documentation</a>
-      <a href="{{ route('docs') }}" class="border-b text-slate-900 hover:text-fuchsia-500 hover:border-fuchsia-200">Components</a>
-        <a href="https://github.com">
+      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-fuchsia-600 hover:border-fuchsia-200 dark:hover:text-fuchsia-500 dark:hover:border-fuchsia-200">Documentation</a>
+      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-fuchsia-600 hover:border-fuchsia-200 dark:hover:text-fuchsia-500 dark:hover:border-fuchsia-200">Components</a>
+        <a href="https://github.com" class="text-black dark:text-white">
           @!ui.icon({ name: 'brand-github-filled' })
         </a>
-        <a href="https://github.com">
-          @!ui.icon({ name: 'bulb' })
-        </a>
+        <button x-on:click="toggleDarkMode" class="text-black dark:text-white">
+          <span id="light-toggle" class="inline-block">
+            @!ui.icon({ name: 'bulb' })
+          </span>
+          <span id="dark-toggle" class="hidden">
+            @!ui.icon({ name: 'moon-filled' })
+          </span>
+        </button>
     </nav>
   </header>
   <main class="flex flex-row">
-    <section class="sticky h-[calc(100vh-55px)] border-r border-zinc-200 top-[55px]">
+    <section class="sticky h-[calc(100vh-55px)] border-r border-zinc-200 dark:border-zinc-700 top-[55px]">
       <ul class="w-64 pb-5 px-5 overflow-y-auto h-[calc(100%-53px)]">
         <li class="mt-5">
-          <span class="font-semibold">Getting Started</span>
+          <span class="font-semibold text-zinc-900 dark:text-zinc-300">Getting Started</span>
           <ul class="mt-2 mx-4 space-y-1">
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Introduction</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">How to Use</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Contribute</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Introduction</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">How to Use</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Contribute</a></li>
           </ul>
         </li>
         <li class="mt-5">
-          <span class="font-semibold">Components</span>
+          <span class="font-semibold text-zinc-900 dark:text-zinc-300">Components</span>
           <ul class="mt-2 mx-4 space-y-1">
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Accordion</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Alert</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Avatar</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Badge</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Banner</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Breadcrumb</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Button</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Card</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Checkbox</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Date Picker</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Hover Card</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Modal</a></li>
-            <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Select</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Accordion</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Alert</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Avatar</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Badge</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Banner</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Breadcrumb</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Button</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Card</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Checkbox</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Date Picker</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Hover Card</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Modal</a></li>
+            <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Select</a></li>
 
           </ul>
         </li>
       </ul>
-      <div class="border-t border-zinc-200 p-4 absolute bottom-0 w-full">
+      <div class="border-t border-zinc-200 dark:border-zinc-700 p-4 absolute bottom-0 w-full">
         <p class="text-sm text-zinc-500 text-center">Made with <span class="relative inline-flex h-3 w-3 mx-0.5">
           <span class="animate-ping absolute inline-flex text-rose-400 opacity-75">♥</span>
           <span class="relative inline-flex rounded-full h-3 w-3 text-rose-500">♥</span>
@@ -71,9 +76,9 @@
         <h3 class="font-semibold mt-10 mb-2">On This Page</h3>
         <ul class="text-sm">
           <li>
-            <a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Quick Start</a>
+            <a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Quick Start</a>
             <ul class="mt-1 ml-6">
-              <li><a href="#" class="py-1 text-zinc-600 hover:text-fuchsia-600">Install the CLI</a></li>
+              <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Install the CLI</a></li>
             </ul>
           </li>
         </ul>
