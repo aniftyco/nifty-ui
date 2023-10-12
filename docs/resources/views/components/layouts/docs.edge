@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" hx-boost="true" hx-ext="head-support,body-support" class="dark" x-data="{}">
+<html lang="en" hx-boost="true" hx-ext="head-support,body-support" x-data="{ darkMode: localStorage.getItem('dark') === 'true' } "
+  x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
+  x-bind:class="{ 'dark': darkMode }">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +20,11 @@
         <a href="https://github.com" class="text-black dark:text-white">
           @!ui.icon({ name: 'brand-github-filled' })
         </a>
-        <button x-on:click="toggleDarkMode" class="text-black dark:text-white">
-          <span id="light-toggle" class="inline-block">
+        <button x-on:click="darkMode = !darkMode" class="text-black dark:text-white" x-cloak>
+          <span x-show="!darkMode">
             @!ui.icon({ name: 'bulb' })
           </span>
-          <span id="dark-toggle" class="hidden">
+          <span x-show="darkMode">
             @!ui.icon({ name: 'moon-filled' })
           </span>
         </button>
@@ -73,7 +75,7 @@
     </section>
     <aside class="sticky top-[55px] h-max">
       <nav class="w-64 px-5">
-        <h3 class="font-semibold mt-10 mb-2">On This Page</h3>
+        <h3 class="font-semibold text-zinc-900 dark:text-zinc-300 mt-10 mb-2">On This Page</h3>
         <ul class="text-sm">
           <li>
             <a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Quick Start</a>
