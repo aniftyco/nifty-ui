@@ -18,14 +18,14 @@
       <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-fuchsia-600 hover:border-fuchsia-200 dark:hover:text-fuchsia-500 dark:hover:border-fuchsia-200">Documentation</a>
       <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-fuchsia-600 hover:border-fuchsia-200 dark:hover:text-fuchsia-500 dark:hover:border-fuchsia-200">Components</a>
         <a href="https://github.com" class="text-black dark:text-white">
-          @!ui.icon({ name: 'brand-github-filled' })
+          @!ui.icon({ name: 'github', set: 'brands', className: 'w-6 h-6' })
         </a>
         <button x-on:click="darkMode = !darkMode" class="text-black dark:text-white" x-cloak>
           <span x-show="!darkMode">
-            @!ui.icon({ name: 'bulb' })
+            @!ui.icon({ name: 'bulb', className: 'w-6 h-6' })
           </span>
           <span x-show="darkMode">
-            @!ui.icon({ name: 'moon-filled' })
+            @!ui.icon({ name: 'moon-filled', className: 'w-6 h-6' })
           </span>
         </button>
     </nav>

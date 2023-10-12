@@ -3,7 +3,9 @@ import { addCollection, edgeIconify } from 'edge-iconify';
 import { join } from 'path';
 import { twMerge } from 'tailwind-merge';
 
-import { icons as tablerIcons } from '@iconify-json/tabler';
+import { icons as brands } from '@iconify-json/cib';
+import { icons as flags } from '@iconify-json/cif';
+import { icons } from '@iconify-json/tabler';
 
 import type { ApplicationContract } from '@ioc:Adonis/Core/Application';
 
@@ -15,7 +17,9 @@ export default class NiftyUiProvider {
   public async boot() {
     const View = this.app.container.use('Adonis/Core/View');
 
-    addCollection(tablerIcons);
+    addCollection(icons);
+    addCollection(brands);
+    addCollection(flags);
     View.use(edgeIconify);
 
     View.mount('ui', join(__dirname, '../views'));

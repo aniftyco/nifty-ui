@@ -1,4 +1,10 @@
 @set('name', name)
 @set('set', set || 'tabler')
 
+@if (set === 'brands')
+    @set('set', 'cib')
+@elseif (set === 'flags')
+    @set('set', 'cif')
+@endif
+
 @svg(`${set}:${name}`, { class: clsx('w-6 h-6', className) })

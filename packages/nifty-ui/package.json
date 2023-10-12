@@ -23,6 +23,8 @@
     "access": "public"
   },
   "dependencies": {
+    "@iconify-json/cib": "^1.1.5",
+    "@iconify-json/cif": "^1.1.7",
     "@iconify-json/tabler": "^1.1.94",
     "clsx": "^2.0.0",
     "edge-iconify": "^1.0.1",
