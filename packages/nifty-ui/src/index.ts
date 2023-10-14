@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { icons as brands } from '@iconify-json/cib';
 import { icons as flags } from '@iconify-json/cif';
-import { icons } from '@iconify-json/tabler';
+import { icons as tabler } from '@iconify-json/tabler';
 
 import type { ApplicationContract } from '@ioc:Adonis/Core/Application';
 
@@ -17,7 +17,7 @@ export default class NiftyUiProvider {
   public async boot() {
     const View = this.app.container.use('Adonis/Core/View');
 
-    addCollection(icons);
+    addCollection(tabler);
     addCollection(brands);
     addCollection(flags);
     View.use(edgeIconify);
