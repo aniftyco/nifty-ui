@@ -10,7 +10,8 @@
   },
   "files": [
     "dist",
-    "views",
+    "ui",
+    "email",
     "instructions.md"
   ],
   "adonisjs": {
