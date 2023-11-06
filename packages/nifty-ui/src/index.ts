@@ -22,7 +22,7 @@ export default class NiftyUiProvider {
     addCollection(flags);
     View.use(edgeIconify);
 
-    View.mount('ui', join(__dirname, '../views'));
+    View.mount('ui', join(__dirname, '../ui'));
     View.mount('email', join(__dirname, '../email'));
 
     View.global('clsx', (...args: any[]) => {
