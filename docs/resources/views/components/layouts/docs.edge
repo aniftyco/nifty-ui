@@ -41,8 +41,8 @@
       @!logo({ size: 'md' })
     </a>
     <nav class="flex items-center space-x-5">
-      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-fuchsia-600 hover:border-fuchsia-200 dark:hover:text-fuchsia-500 dark:hover:border-fuchsia-200">Documentation</a>
-      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-fuchsia-600 hover:border-fuchsia-200 dark:hover:text-fuchsia-500 dark:hover:border-fuchsia-200">Components</a>
+      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-primary-600 hover:border-primary-200 dark:hover:text-primary-500 dark:hover:border-primary-200">Documentation</a>
+      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-primary-600 hover:border-primary-200 dark:hover:text-primary-500 dark:hover:border-primary-200">Components</a>
         <a href="https://github.com" class="text-black dark:text-white">
           @!ui.icon({ name: 'github', set: 'brands', class: 'w-6 h-6' })
         </a>
@@ -68,7 +68,7 @@
           </div>
           <ul class="mt-2 mx-4 space-y-1" x-show="expanded">
             @each(item in section.items)
-            <li><a href="{{ item.href }}" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">{{ item.name }}</a></li>
+            <li><a href="{{ item.href }}" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">{{ item.name }}</a></li>
             @end
           </ul>
         </li>
@@ -91,9 +91,9 @@
         <h3 class="font-semibold text-zinc-900 dark:text-zinc-300 mt-10 mb-2">On This Page</h3>
         <ul class="text-sm">
           <li>
-            <a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Quick Start</a>
+            <a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">Quick Start</a>
             <ul class="mt-1 ml-6">
-              <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-fuchsia-600 dark:hover:text-fuchsia-500">Install the CLI</a></li>
+              <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">Install the CLI</a></li>
             </ul>
           </li>
         </ul>
