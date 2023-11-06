@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   darkMode: 'class',
@@ -14,6 +13,7 @@ const config: Config = {
       addVariant('htmx-added', ['&.htmx-added', '.htmx-added &']);
     }),
   ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('tailwind-htmx')],
   theme: {},
 };
 
