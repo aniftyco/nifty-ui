@@ -1,0 +1,4 @@
+@set('name', $props.name)
+@set('set', $props.set === 'brands' ? 'cib' : $props.set === 'flags' ? 'cif' : 'tabler')
+
+@svg(`${set}:${name}`, { ...$props.except(['name', 'set']), class: clsx('w-6 h-6', $props.class) })
