@@ -41,7 +41,7 @@ const headerIdLinks = (remarkable: Remarkable) => {
     const slug = string.dashCase(content);
 
     if (levels.indexOf(level) !== -1) {
-      return `<h${level} id="${slug}" class="doc-heading group">`;
+      return `<h${level} id="${slug}" class="doc-heading">`;
     }
 
     return open(tokens, idx);
