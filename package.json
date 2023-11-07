@@ -41,6 +41,7 @@
     "@aniftyco/prettier": "^0.1.0",
     "@aniftyco/tsconfig": "^1.0.1",
     "@types/node": "^20.8.4",
+    "@types/remarkable": "^2.0.7",
     "lerna": "^7.3.1",
     "prettier": "^3.0.3",
     "turbo": "^1.10.15",
