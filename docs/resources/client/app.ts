@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css';
+import './app.css';
 
 import Alpine from 'alpinejs';
 import htmx from 'htmx.org';

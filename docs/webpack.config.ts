@@ -46,7 +46,7 @@ Encore.setPublicPath('/assets');
 | entrypoints.
 |
 */
-Encore.addEntry('app', './resources/js/app.ts');
+Encore.addEntry('app', './resources/client/app.ts');
 Encore.enableTypeScriptLoader();
 
 /*

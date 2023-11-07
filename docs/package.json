@@ -10,6 +10,7 @@
   "prettier": "@aniftyco/prettier",
   "postcss": {
     "plugins": {
+      "tailwindcss/nesting": {},
       "tailwindcss": {},
       "autoprefixer": {}
     }

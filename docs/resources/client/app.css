@@ -1,0 +1,25 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+  .doc-heading {
+    a {
+      @apply -ml-[1.2em] float-left no-underline opacity-0 pr-[0.55em];
+    }
+
+    &:hover {
+      a {
+        @apply opacity-100;
+      }
+    }
+
+    &:focus {
+      a {
+        @apply opacity-100;
+      }
+    }
+  }
+}
