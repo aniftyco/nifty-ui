@@ -1,45 +1,16 @@
-@set('title', 'Nifty UI')
+@layouts.docs({ title: `${meta.title} - Nifty UI`, toc })
+<h1 class="text-4xl font-bold text-zinc-800 dark:text-zinc-500">{{ meta.title }}</h1>
 
-@layouts.docs({ title })
-<h1 class="text-4xl font-bold text-zinc-800">Introduction</h1>
-
-<div class="mt-4 prose prose-a:text-primary-500 max-w-none prose-pre:bg-zinc-100 prose-pre:text-zinc-700 prose-headings:scroll-m-20">
-  <p> Nifty UI is beautifully designed, expertly crafted components UI kit for building a high-quality <a href="#" rel="noopener" target="_blank">website</a> and web apps using web <a href="#">technologies</a> — HTML, CSS, and JavaScript — with integrations of the world’s most popular framework Adonis. </p>
-  <div class="grid gap-5 md:grid-cols-2">
-    <div class="flex gap-3 items-start flex-col border p-6 rounded-lg border-zinc-200">
-      <div class="text-primary-600 flex bg-primary-100 p-3 rounded-full relative overflow-hidden">
-        @!ui.icon({ name: 'rocket', class: 'text-primary-600 h-5 w-5' })
-      </div>
-      <div class="flex flex-col">
-        <span class="font-semibold text-xl">Installation</span>
-        <span class="mt-1 text-zinc-500">Easy install this plugin using our guide written for beginners.</span>
-      </div>
-      <a href="#" class="text-primary-500 hover:text-primary-600 text-sm" rel="noopener">See Guide</a>
-    </div>
-    <div class="flex gap-3 items-start flex-col  border p-6 rounded-lg border-zinc-200">
-      <div class="text-primary-600 flex bg-primary-100 p-3 rounded-full relative overflow-hidden">
-        @!ui.icon({ name: 'box-padding', class: 'text-primary-600 h-5 w-5' })
-      </div>
-      <div class="flex flex-col">
-        <span class="font-semibold text-xl">Typography</span>
-        <span class="mt-1 text-zinc-500"> Open this page to see everything can be added into the docs. </span>
-      </div>
-      <a href="#" class="text-primary-500 hover:text-primary-600 text-sm" rel="noopener">See Page</a>
-    </div>
-  </div>
-  <h2 id="quick-start" class="group"> Quick Start <a href="#quick-start" class="xl:-ml-[1.2em] xl:float-left no-underline opacity-0 group-hover:opacity-100 group-focus:opacity-100 xl:pr-[0.55em]">#</a>
-  </h2>
-  <p>Nifty UI JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.</p>
-  <h3 id="install-the-cli" class="group">Install the CLI <a href="#install-the-cli" class="xl:-ml-[1.2em] xl:float-left no-underline opacity-0 group-hover:opacity-100 group-focus:opacity-100 xl:pr-[0.55em]">#</a>
-  </h3>
-  <p>To create a build-tool-enabled project on your machine, run the following command in your command line.</p>
-  <pre><code>npm install nifty-ui</code></pre>
-  <p>You should now have your first project running! Note that the example components in the generated project are written using the API and <code>cli</code>, rather than the Options API. Here are some additional tips: </p>
-  <ul>
-    <li>The recommended IDE setup is <a href="#" rel="noopener" target="_blank">Visual Studio Code</a>. If you use other editors, check out the IDE support section. </li>
-    <li>More tooling details, including integration with backend frameworks, are discussed in the Tooling Guide.</li>
-    <li>To learn more about the underlying build tool, check out the <a href="#"> docs</a>. </li>
-    <li>If you chose to use TypeScript, check out the TypeScript Usage Guide.</li>
-  </ul>
+<div class="
+    mt-4 max-w-none prose prose-headings:scroll-m-20
+    prose-p:text-zinc-800 dark:prose-p:text-zinc-600
+    prose-a:text-primary-500 dark:prose-a:text-primary-800
+    prose-headings:text-zinc-800 dark:prose-headings:text-zinc-500
+    prose-pre:bg-zinc-200 dark:prose-pre:bg-zinc-900
+    prose-pre:text-zinc-700 dark:prose-pre:text-zinc-500
+    prose-li:text-zinc-800 dark:prose-li:text-zinc-600
+    marker:text-primary-500 dark:marker:text-primary-800
+  ">
+  {{{ content }}}
 </div>
 @end

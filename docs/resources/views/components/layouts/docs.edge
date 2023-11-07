@@ -1,104 +1,68 @@
 @set('navigation', [{
   name: 'Getting Started',
   items: [
-    { name: 'Introduction', href: '#' },
-    { name: 'How to Use', href: '#' },
-    { name: 'Contribute', href: '#' }
+    { name: 'Introduction', params: { section: 'introduction' } },
+    { name: 'Why Nifty UI?', params: { section: 'why' } },
+    { name: 'Installation', params: { section: 'installation' } }
   ]
 }, {
   name: 'Components',
   items: [
-    { name: 'Accordion', href: '#' },
-    { name: 'Alert', href: '#' },
-    { name: 'Avatar', href: '#' },
-    { name: 'Badge', href: '#' },
-    { name: 'Banner', href: '#' },
-    { name: 'Breadcrumb', href: '#' },
-    { name: 'Button', href: '#' },
-    { name: 'Card', href: '#' },
-    { name: 'Checkbox', href: '#' },
-    { name: 'Date Picker', href: '#' },
-    { name: 'Hover Card', href: '#' },
-    { name: 'Modal', href: '#' },
-    { name: 'Select', href: '#' },
+    { name: 'Icon', params: { section: 'components', page: 'icon' } },
   ]
 }])
 
-<!DOCTYPE html>
-<html lang="en" hx-boost="true" hx-ext="head-support,body-support" x-data="{ darkMode: localStorage.getItem('dark') === 'true' } "
-  x-init="$watch('darkMode', val => localStorage.setItem('dark', val))"
-  x-bind:class="{ 'dark': darkMode }">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  @entryPointStyles('app')
-  @entryPointScripts('app')
-</head>
-<body class="bg-white dark:bg-zinc-900">
-  <header class="border-b dark:border-zinc-700 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-xl sticky top-0 z-10 flex items-center justify-between px-5 py-3">
-    <a href="/" title="Nifty UI">
-      @!logo({ size: 'md' })
-    </a>
-    <nav class="flex items-center space-x-5">
-      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-primary-600 hover:border-primary-200 dark:hover:text-primary-500 dark:hover:border-primary-200">Documentation</a>
-      <a href="{{ route('docs') }}" class="font-medium text-zinc-900 dark:text-zinc-300 hover:text-primary-600 hover:border-primary-200 dark:hover:text-primary-500 dark:hover:border-primary-200">Components</a>
-        <a href="https://github.com" class="text-black dark:text-white">
-          @!ui.icon({ name: 'github', set: 'brands', class: 'w-6 h-6' })
-        </a>
-        <button x-on:click="darkMode = !darkMode" class="text-black dark:text-white" x-cloak>
-          <span x-show="!darkMode">
-            @!ui.icon({ name: 'bulb', class: 'w-6 h-6' })
-          </span>
-          <span x-show="darkMode">
-            @!ui.icon({ name: 'moon-filled', class: 'w-6 h-6' })
-          </span>
-        </button>
-    </nav>
-  </header>
-  <main class="flex flex-row">
-    <section class="sticky h-[calc(100vh-55px)] border-r border-zinc-200 dark:border-zinc-700 top-[55px]">
-      <ul class="w-64 pb-5 px-5 overflow-y-auto h-[calc(100%-53px)]">
-      @each(section in navigation)
-        <li class="mt-5" x-data="{ expanded: true }">
-          <div class="flex items-center space-x-2 cursor-pointer" x-on:click="expanded = !expanded">
-            <span class="font-semibold text-zinc-900 dark:text-zinc-300">{{ section.name }}</span>
-            @!ui.icon({ name: 'chevron-left', class: 'w-4 h-4 inline-block', 'x-show': '!expanded' })
-            @!ui.icon({ name: 'chevron-down', class: 'w-4 h-4 inline-block', 'x-show': 'expanded' })
-          </div>
-          <ul class="mt-2 mx-4 space-y-1" x-show="expanded">
-            @each(item in section.items)
-            <li><a href="{{ item.href }}" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">{{ item.name }}</a></li>
-            @end
-          </ul>
-        </li>
-      @end
-      </ul>
-      <div class="border-t border-zinc-200 dark:border-zinc-700 p-4 absolute bottom-0 w-full">
-        <p class="text-sm text-zinc-500 text-center">Made with <span class="relative inline-flex h-3 w-3 mx-0.5">
-          <span class="animate-ping absolute inline-flex text-rose-400 opacity-75">♥</span>
-          <span class="relative inline-flex rounded-full h-3 w-3 text-rose-500">♥</span>
-        </span> by <a href="https://aniftyco.com" class="text-teal-600 hover:underline hover:text-teal-500">NiftyCo</a></p>
-      </div>
-    </section>
-    <section class="flex-1 max-w-3xl mx-auto w-full">
-      <div class="container mx-auto px-5 py-10">
-        {{{ await $slots.main() }}}
-      </div>
-    </section>
-    <aside class="sticky top-[55px] h-max">
-      <nav class="w-64 px-5">
-        <h3 class="font-semibold text-zinc-900 dark:text-zinc-300 mt-10 mb-2">On This Page</h3>
-        <ul class="text-sm">
-          <li>
-            <a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">Quick Start</a>
-            <ul class="mt-1 ml-6">
-              <li><a href="#" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">Install the CLI</a></li>
-            </ul>
-          </li>
+@layouts.root({ title: $props.title })
+  <section class="sticky h-[calc(100vh-55px)] border-r border-zinc-200 dark:border-zinc-900 top-[55px]">
+    <ul class="w-64 pb-5 px-5 overflow-y-auto h-[calc(100%-53px)]">
+    @each(section in navigation)
+      <li class="mt-5" x-data="{ expanded: true }">
+        <div class="flex items-center space-x-2 cursor-pointer select-none text-zinc-900 dark:text-zinc-300" x-on:click="expanded = !expanded">
+          <span class="font-semibold">{{ section.name }}</span>
+          @!ui.icon({ name: 'chevron-left', class: 'w-4 h-4 inline-block', 'x-show': '!expanded' })
+          @!ui.icon({ name: 'chevron-down', class: 'w-4 h-4 inline-block', 'x-show': 'expanded' })
+        </div>
+        <ul class="mt-2 mx-4 space-y-1" x-show="expanded">
+          @each(item in section.items)
+          <li><a href="{{ route('docs.page', item.params) }}" class="{{ clsx('py-1 text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-primary-100', {
+            'text-primary-600 dark:text-primary-500 font-medium': request.url() === route('docs.page', item.params),
+          }) }}">{{ item.name }}</a></li>
+          @end
         </ul>
-      </nav>
-    </aside>
-  </main>
-</body>
-</html>
+      </li>
+    @end
+    </ul>
+    <div class="border-t border-zinc-200 dark:border-zinc-900 p-4 absolute bottom-0 w-full">
+      <p class="text-sm text-zinc-500 text-center">Made with <span class="relative inline-flex h-3 w-3 mx-0.5">
+        <span class="animate-ping absolute inline-flex text-rose-400 opacity-75">♥</span>
+        <span class="relative inline-flex rounded-full h-3 w-3 text-rose-500">♥</span>
+      </span> by <a href="https://aniftyco.com" class="text-teal-600 hover:underline hover:text-teal-500 font-semibold">NiftyCo</a></p>
+    </div>
+  </section>
+  <section class="flex-1 max-w-3xl mx-auto w-full">
+    <div class="container mx-auto px-5 py-10">
+      {{{ await $slots.main() }}}
+    </div>
+  </section>
+  <aside class="sticky top-[55px] h-max">
+    <nav class="w-64 px-5">
+    @if($props.toc.length > 0)
+      <h3 class="font-semibold text-zinc-900 dark:text-zinc-300 mt-10 mb-2">On This Page</h3>
+      <ul class="text-sm">
+        @each(item in $props.toc)
+        <li>
+          <a href="#{{ item.slug }}" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">{{ item.anchor }}</a>
+          @if(item.items.length > 0)
+            <ul class="mt-1 ml-6">
+              @each(child in item.items)
+                <li><a href="#{{ child.slug }}" class="py-1 text-zinc-600 dark:text-zinc-500 hover:text-primary-600 dark:hover:text-primary-500">{{ child.anchor }}</a></li>
+              @end
+            </ul>
+          @end
+        </li>
+        @end
+      </ul>
+      @end
+    </nav>
+  </aside>
+@end
